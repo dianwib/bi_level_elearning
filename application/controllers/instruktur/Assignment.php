@@ -24,7 +24,7 @@ class Assignment extends CI_Controller {
 
         $data['crs_id']  = $crs_id;
 //         dd($data['dataLO']);
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function insert()
@@ -82,7 +82,7 @@ class Assignment extends CI_Controller {
         $data['dataasing'] = M_Course_Assignment::where('asg_id',$id)->first();
         $data['sidebar'] = "layout/sidebar_instruktur";
         $data['content'] = "instruktur/edit_assignment";
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
 
     }
 
@@ -146,6 +146,6 @@ class Assignment extends CI_Controller {
             ->leftJoin("users","users.usr_id","=","course_assignment_submission.usr_id")
             ->where("course_assignment_submission.asg_id", $asg_id)->get();
 //        dd($data['assignment']);
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 }

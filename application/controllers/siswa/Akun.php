@@ -230,9 +230,9 @@ class Akun extends CI_Controller {
             }
         }
         
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/akun_siswa';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
     public function manage_password()
     {
@@ -432,9 +432,9 @@ class Akun extends CI_Controller {
             }
         }
         
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/password';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
     public function update_user()
     {
@@ -721,8 +721,8 @@ class Akun extends CI_Controller {
             }
         }
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/user_guide';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 }

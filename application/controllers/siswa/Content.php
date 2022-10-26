@@ -38,9 +38,9 @@ class Content extends CI_Controller {
         $data['learning_goal'] = M_Course_Content::leftJoin('learning_goals','learning_goals.loc_id','=','course_content.loc_id')
         ->where('learning_goals.usr_id', $this->session->userdata('id'))->get();
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/course_materi';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
 
     }
 
@@ -62,8 +62,8 @@ class Content extends CI_Controller {
             $data['content'] = 'siswa/course_video';
         }
 
-        $data['sidebar'] = 'layout/sidebar';
-        $this->load->view('layout/master',$data);
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function countLogContent($lsn_id,$num,$content4)

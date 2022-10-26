@@ -48,6 +48,10 @@ defined('FOPEN_READ_WRITE_CREATE')              OR define('FOPEN_READ_WRITE_CREA
 defined('FOPEN_WRITE_CREATE_STRICT')            OR define('FOPEN_WRITE_CREATE_STRICT', 'xb');
 defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 
+defined('SIDEBAR_TEMPLATE')       OR define('SIDEBAR_TEMPLATE', 'layout/sidebar_new');
+defined('MASTER_TEMPLATE')       OR define('MASTER_TEMPLATE', 'layout/master_new');
+defined('CONTENT_TEMPLATE')       OR define('CONTENT_TEMPLATE', '_new');
+
 /*
 |--------------------------------------------------------------------------
 | Exit Status Codes

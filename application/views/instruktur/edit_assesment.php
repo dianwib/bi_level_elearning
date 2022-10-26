@@ -126,6 +126,23 @@
             </select>
             </div>
           </div>
+
+          <div class="form-group">
+                    <label class="control-label col-sm-2">Lesson :</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="lsn1">
+                        <?php
+                        foreach ($listLes as $d) {
+                          if ($d->lsn_id == $c->lsn_id) {
+                            $sl = 'selected';
+                          } else {
+                            $sl = '';
+                          }
+                          echo '<option ' . $sl . ' value="' . $d->lsn_id . '" >' . $d->lsn_name . '</option>';
+                        } ?>
+                      </select>
+                    </div>
+                  </div>
           <!-- Hidden input ID -->
           <input type="text" hidden name="qst_id<?php echo $i+1 ?>" value="<?php echo $c->qst_id ?>">
           <!-- End Hidden -->
@@ -239,6 +256,17 @@
               <?php 
               foreach($listLo as $c){
                 echo '<option value="'.$c->loc_id.'" >'.$c->loc_desc.'</option>';
+              } ?>
+            </select>
+            </div>
+          </div> 
+          <div class="form-group">
+            <label class="control-label col-sm-2">Lesson :</label>
+            <div class="col-sm-10">
+            <select class="form-control" name="lsn`+currNum+`" >
+              <?php 
+              foreach($listLes as $c){
+                echo '<option value="'.$c->lsn_id.'" >'.$c->lsn_name.'</option>';
               } ?>
             </select>
             </div>

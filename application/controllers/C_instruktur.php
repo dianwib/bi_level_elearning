@@ -39,21 +39,21 @@ class C_instruktur extends CI_Controller {
         $forumlast = new M_Course_Forum;
         $data['list_forum'] = $forumlast->selectByUser($this->session->userdata('id'),5);
 //        dd($data['jum']);
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
         
     }
     public function result_instruktur()
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/result_instruktur';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
 //    public function add_course()
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/add_course';
-//        $this->load->view('layout/master', $data);
+//        $this->load->view(MASTER_TEMPLATE, $data);
 //
 //    }
 //
@@ -61,7 +61,7 @@ class C_instruktur extends CI_Controller {
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/lesson';
-//        $this->load->view('layout/master', $data);
+//        $this->load->view(MASTER_TEMPLATE, $data);
 //
 //    }
 //
@@ -69,7 +69,7 @@ class C_instruktur extends CI_Controller {
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/add_lesson';
-//        $this->load->view('layout/master', $data);
+//        $this->load->view(MASTER_TEMPLATE, $data);
 //
 //    }
 
@@ -78,14 +78,14 @@ class C_instruktur extends CI_Controller {
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/learning_outcome';
-//        $this->load->view('layout/master',$data);
+//        $this->load->view(MASTER_TEMPLATE,$data);
 //    }
 
 //    public function add_lo()
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/add_LO';
-//        $this->load->view('layout/master', $data);
+//        $this->load->view(MASTER_TEMPLATE, $data);
 //
 //    }
 
@@ -94,7 +94,7 @@ class C_instruktur extends CI_Controller {
 //    {
 //        $data['sidebar'] = 'layout/sidebar_instruktur';
 //        $data['content'] = 'instruktur/tambah_assessment';
-//        $this->load->view('layout/master', $data);
+//        $this->load->view(MASTER_TEMPLATE, $data);
 //
 //    }
 //
@@ -122,7 +122,7 @@ class C_instruktur extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/tambah_pretest';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
         
     } 
 
@@ -130,7 +130,7 @@ class C_instruktur extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/tambah_remedial';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
         
     }  
 
@@ -138,7 +138,7 @@ class C_instruktur extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/tambah_latihan';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
         
     }
 
@@ -146,7 +146,7 @@ class C_instruktur extends CI_Controller {
     //{
       //  $data['sidebar'] = 'layout/sidebar_instruktur';
         //$data['content'] = 'instruktur/add_assignment';
-        //$this->load->view('layout/master', $data);
+        //$this->load->view(MASTER_TEMPLATE, $data);
     //}
 
 
@@ -154,6 +154,6 @@ class C_instruktur extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/result_instruktur';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 }

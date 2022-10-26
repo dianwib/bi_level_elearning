@@ -33,7 +33,7 @@ class Content extends CI_Controller {
         // dd($data);
         $data['sidebar'] = "layout/sidebar_instruktur";
         $data['content'] = "instruktur/content";
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function add_content($id)
@@ -45,7 +45,7 @@ class Content extends CI_Controller {
         $data['lsn_id'] = $id;
         $data['sidebar'] = "layout/sidebar_instruktur";
         $data['content'] = "instruktur/add_content";
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function insert_content()
@@ -106,7 +106,7 @@ class Content extends CI_Controller {
         $data['dataLO'] = M_Course_Learning_Outcomes::get();
         $data['sidebar'] = "layout/sidebar_instruktur";
         $data['content'] = "instruktur/edit_content";
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
         
     }
 

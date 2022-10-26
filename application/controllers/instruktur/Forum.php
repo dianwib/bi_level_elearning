@@ -25,7 +25,7 @@ class Forum extends CI_Controller {
 //        dd($dataCourse);
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/forum_instruktur';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function add_forum($crs_id)
@@ -37,7 +37,7 @@ class Forum extends CI_Controller {
                                 ->get();
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/add_forum';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert_forum($crs_id)
@@ -79,7 +79,7 @@ class Forum extends CI_Controller {
                         ->get();
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/edit_forum';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function update_forum($cfr_id,$crs_id)

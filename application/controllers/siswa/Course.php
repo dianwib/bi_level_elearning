@@ -26,8 +26,8 @@ class Course extends CI_Controller {
 
      public function index()
      {
-        $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/course_siswa';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
+        $data['content'] = 'siswa/course_siswa' ;
         $data['courses']=  M_Course::leftJoin("users","users.usr_id","=","course.usr_id")->get();
 
         //Outline Stay
@@ -225,7 +225,7 @@ class Course extends CI_Controller {
             }
         }
 
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
      }
 
     public function course_close($crs_id)
@@ -233,9 +233,9 @@ class Course extends CI_Controller {
         $data['dataCourse'] = M_Course::leftJoin("users","users.usr_id","=","course.usr_id")
                                         ->where('crs_id',$crs_id)->first();
         $data['dataCourseLain'] = M_Course::where('crs_id', '<>', $crs_id)->get();
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/course_close';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function enrol($crs_id)
@@ -466,9 +466,9 @@ class Course extends CI_Controller {
             }
         }
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/my_course';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function course_detail($crs_id)
@@ -487,7 +487,7 @@ class Course extends CI_Controller {
                     $lsnAcc[$i] = 'color: #37d837;';
                 }
                 else{
-                    $lsnAcc[$i] = 'color: white;';
+                    $lsnAcc[$i] = '';
                 }
                 $i++;
             }
@@ -506,9 +506,9 @@ class Course extends CI_Controller {
             $data['jml_assignment'] = $data['assignment']->count();
             $data['listAss'] = $listAss;
             $data['jumSoal'] = $jumSoal;
-            $data['sidebar'] = 'layout/sidebar';
+            $data['sidebar'] = SIDEBAR_TEMPLATE;
             $data['content'] = 'siswa/course_detail';
-            $this->load->view('layout/master', $data);
+            $this->load->view(MASTER_TEMPLATE, $data);
         }else
         {
             //list assesment
@@ -525,9 +525,9 @@ class Course extends CI_Controller {
             $data['jml_assignment'] = $data['assignment']->count();
             $data['listAss'] = $listAss;
             $data['jumSoal'] = $jumSoal;
-            $data['sidebar'] = 'layout/sidebar';
-            $data['content'] = 'siswa/course_detail';
-            $this->load->view('layout/master', $data);
+            $data['sidebar'] = SIDEBAR_TEMPLATE;
+            $data['content'] = 'siswa/course_detail' ;
+            $this->load->view(MASTER_TEMPLATE, $data);
         }
 
         //Outline Visit

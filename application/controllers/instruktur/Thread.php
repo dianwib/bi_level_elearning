@@ -35,7 +35,7 @@ class Thread extends CI_Controller {
 //        dd($data['judul_lesson']);
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/list_thread_instruktur';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function detail_thread_instruktur($cft_id)
@@ -48,7 +48,7 @@ class Thread extends CI_Controller {
 
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/detail_thread_instruktur';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert_komentar_reply($cft_id)

@@ -12,6 +12,7 @@ class M_Course_Learning_Outcomes extends Eloquent
 
     public function insert_lo($lo,$crs_id)
     {
+        // dd($lo,$crs_id);
         $jum = count($lo);
         $i = 0;
         while ($i < $jum){
@@ -21,6 +22,25 @@ class M_Course_Learning_Outcomes extends Eloquent
             $stat = $loc->save();
             $i++;
         }
+//        $num = 0;
+//        foreach ($lo as $loc){
+//            $lo = new M_Course_Learning_Outcomes;
+//            $lo->loc_desc = $loc[$num];
+//            $lo->crs_id = $crs_id;
+//            $num++;
+//        }
+
+//        return $lo ->save();
+        return $stat;
+    }
+
+    public function insert_lo_single($data)
+    {
+        $loc = new M_Course_Learning_Outcomes;
+        $loc->loc_desc = $data['loc_desc'];
+        $loc->crs_id = $data['crs_id'];
+        $stat = $loc->save();
+        
 //        $num = 0;
 //        foreach ($lo as $loc){
 //            $lo = new M_Course_Learning_Outcomes;

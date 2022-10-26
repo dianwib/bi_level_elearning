@@ -228,9 +228,9 @@ class Forum extends CI_Controller {
             }
         }
         
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/forum_siswa';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function dashboard_forum_siswa($crs_id){
@@ -238,8 +238,8 @@ class Forum extends CI_Controller {
                             ->where('course.crs_id',$crs_id)
                             ->get();
         
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/dashboard_forum_siswa';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 }

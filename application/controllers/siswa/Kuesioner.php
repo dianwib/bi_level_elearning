@@ -22,16 +22,16 @@ class Kuesioner extends CI_Controller {
 
 
     public function kuesioner_ls(){
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/selfass';
         if($this->session->userdata('ls') == 1){
             redirect('siswa/hasil_kuesioner_ls');
         }
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function hasil_kuesioner_ls(){
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/hasilselfass';
         $hasil = $this->M_Hasil_Kuesioner->selectByUser($this->session->userdata('id'));
         $data['hasil'] = $hasil;
@@ -103,16 +103,16 @@ class Kuesioner extends CI_Controller {
         }
         $data['hasil2Arti'] = $hasil2Arti;
         $data['hasilKues2'] = $hasil2;
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function kuesioner_tr(){
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/kuesioner_teamrole';
         if($this->session->userdata('tr') == 1){
             redirect('siswa/hasil_kuesioner_ls');
         }
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function calc_kuesioner(){

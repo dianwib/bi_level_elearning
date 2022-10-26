@@ -97,6 +97,19 @@
                     <a class="btn btn-danger pull-right" onclick="deleteSoal(1)" id="del1">(X) Hapus Soal</a> 
                 </div>
           </div> 
+
+          <div class="form-group">
+                  <label class="control-label col-sm-2">Lesson :</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" name="lsn1">
+                      <option disable>>-Pilih Modul-<</option>
+                          <?php
+                          foreach ($listLes as $c) {
+                            echo '<option value="' . $c->lsn_id . '" >' . $c->lsn_name . '</option>';
+                          } ?>
+                    </select>
+                  </div>
+                </div>
           	<div class="form-group">
 						    <label class="control-label col-sm-2" id="lab1" >Soal No. 1 :
                   <hr/>
@@ -207,6 +220,20 @@
                     <a class="btn btn-danger pull-right" onclick="deleteSoal(`+currNum+`)" id="del1">(X) Hapus Soal</a> 
                 </div>
           </div> 
+
+          <div class="form-group">
+            <label class="control-label col-sm-2">Lesson :</label>
+            <div class="col-sm-8">
+            <select class="form-control" name="lsn`+currNum+`" >
+            <option disable>>-Pilih Modul-<</option>
+              <?php 
+              foreach($listLes as $c){
+                echo '<option value="'.$c->lsn_id.'" >'.$c->lsn_name.'</option>';
+              } ?>
+            </select>
+            </div>
+          </div> 
+
              <div class="form-group">
 						    <label class="control-label col-sm-2" id="lab`+currNum+`" >Soal No. `+currNum+` :
                   <hr/>

@@ -90,26 +90,26 @@ class Thread extends CI_Controller {
                 $index++;
             } 
             $data['jumlahpost'] = $sumpost;
-            $data['sidebar'] = 'layout/sidebar';
+            $data['sidebar'] = SIDEBAR_TEMPLATE;
             $data['content'] = 'siswa/list_thread_siswa';
-            $this->load->view('layout/master',$data);  
+            $this->load->view(MASTER_TEMPLATE,$data);  
         }
         else
         {
             $jumlahpost = 0;
             $data['jumlahpost'] = $jumlahpost;
-            $data['sidebar'] = 'layout/sidebar';
+            $data['sidebar'] = SIDEBAR_TEMPLATE;
             $data['content'] = 'siswa/list_thread_siswa';
-            $this->load->view('layout/master',$data); 
+            $this->load->view(MASTER_TEMPLATE,$data); 
         }
     }
 
     public function add_thread_siswa($cfr_id)
     {
         $data['datathreadforumsiswa'] = M_Course_Forum::where('cfr_id',$cfr_id)->first();
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/add_thread_siswa';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert_thread_siswa($cfr_id)
@@ -175,9 +175,9 @@ class Thread extends CI_Controller {
                         ->where('course_forum_thread.cft_id',$cft_id)
                         ->first();
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/edit_thread_siswa';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function update_thread_siswa($cft_id,$cfr_id)
@@ -263,9 +263,9 @@ class Thread extends CI_Controller {
 
         $data['halaman'] = $halaman;
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/detail_thread_siswa';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert_komentar_reply($cft_id,$cfr_id,$halaman)

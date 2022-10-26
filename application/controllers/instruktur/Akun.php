@@ -29,13 +29,13 @@ class Akun extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/akun_instruktur';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
     public function manage_password()
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/password';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
     
     public function update_user()

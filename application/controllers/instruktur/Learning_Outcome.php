@@ -22,7 +22,7 @@ class Learning_Outcome extends CI_Controller {
         $data['dataLO'] = M_Course_Learning_Outcomes::get();
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/learning_outcome';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function add_lo()
@@ -31,7 +31,7 @@ class Learning_Outcome extends CI_Controller {
 //        dd($data['data_course']);
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/add_LO';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
 
 
     }
@@ -40,8 +40,8 @@ class Learning_Outcome extends CI_Controller {
     {
         $data['loc_desc'] = $this->input->post('loc_desc');
         $data['crs_id'] = $this->input->post('crs_id');
-//         dd($data['loc_desc']);
-        $insert= $this->M_Course_Learning_Outcomes->insert_lo($data);
+        // dd($data['loc_desc']);
+        $insert= $this->M_Course_Learning_Outcomes->insert_lo_single($data);
 //         dd($insert);
         if($insert)
         {
@@ -62,7 +62,7 @@ class Learning_Outcome extends CI_Controller {
 //        dd( $data['course_Lo']);
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/edit_LO';
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function update_lo()

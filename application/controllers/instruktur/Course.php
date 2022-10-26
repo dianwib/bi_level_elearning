@@ -25,7 +25,7 @@ class Course extends CI_Controller {
         $data['content'] = 'instruktur/myCourse';
         $data['courses']= M_course::where('course.usr_id', '=', $this->session->userdata('id'))->get();
 
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     /* CRUD Course */
@@ -34,7 +34,7 @@ class Course extends CI_Controller {
     {
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = "instruktur/add_course";
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert()
@@ -70,7 +70,7 @@ class Course extends CI_Controller {
                                     ->first();
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = 'instruktur/edit_course';
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
 
     }
 

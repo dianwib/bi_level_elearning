@@ -9,7 +9,7 @@
                     <div class="mdl-card__subtitle-text">Masukan Detail Content</div>
                 </div>
                 <div class="mdl-card__supporting-text" style="font-size:15px;">
-                    <form action="<?php echo site_url('instruktur/insert_content'); ?>" class="form-horizontal" method="post" enctype="multipart/form-data" >
+                    <form action="<?php echo site_url('instruktur/insert_content'); ?>" class="form-horizontal" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="inputtext3" class="col-sm-2 control-label">Nama Kontent</label>
                             <div class="col-sm-10">
@@ -56,9 +56,9 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Learning Outcome</label>
                             <div class="col-sm-10">
-                                <select name="loc_id" class="form-control">
+                                <select name="loc_id" id="loc_id" class="form-control" required>
                                     <option disabled selected>Pilihan Learning Outcome</option>
-                                    <?php foreach($dataLO as $LO): ?>
+                                    <?php foreach ($dataLO as $LO) : ?>
                                         <option value="<?php echo $LO->loc_id ?> "><?php echo $LO->loc_desc ?></option>
                                     <?php endforeach ?>
                                 </select>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <input name="lsn_id" class="form-control" id="inputtext3" value="<?php echo $lsn_id?>" style="display:none"/>
+                                <input name="lsn_id" class="form-control" id="inputtext3" value="<?php echo $lsn_id ?>" style="display:none" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -82,31 +82,37 @@
 </main>
 
 <script>
-    $(document).ready(function () {
-        $("#pilih").change(function () {
+    $(document).ready(function() {
+
+        $("#pilih").change(function() {
             if ($(this).val() == "Text") {
                 $("#berkas").fadeIn();
-                $("#uploadberkas").attr("required",true);
+                $("#uploadberkas").attr("required", true);
                 $("#video").hide();
-            }else if ($(this).val() == "Video"){
+            } else if ($(this).val() == "Video") {
                 $("#berkas").hide();
                 $("#video").fadeIn();
-                $("#uploadvideo").attr("required",true);
-            }else{
+                $("#uploadvideo").attr("required", true);
+            } else {
                 $("#berkas").fadeIn();
-                $("#uploadberkas").attr("required",true);
+                $("#uploadberkas").attr("required", true);
                 $("#video").hide();
             }
         });
         textEdit(1);
     });
 
-    $("form").submit(function (e) {
+    $("form").submit(function(e) {
         var a = $('#textEditor1').val();
         if (a == '') {
             alert('Deskripsi Content tidak boleh kosong');
             e.preventDefault();
         }
+
+        if ($("#loc_id").val() == 0 || $("#loc_id").val() == null) {
+                alert('Pilihan Learning Outcome tidak boleh kosong');
+                e.preventDefault();
+            };
     });
 </script>
 <!-- <script>
@@ -149,7 +155,8 @@
             $.ajax({
                 data: data,
                 type: "POST",
-                url: '<?php // echo base_url().'instruktur/Content/uplGambar' ?>',
+                url: '<?php // echo base_url().'instruktur/Content/uplGambar' 
+                        ?>',
                 cache: false,
                 contentType: false,
                 processData: false,

@@ -81,7 +81,7 @@ class At_risk extends CI_Controller {
         }
         $status = $this->M_At_risk->posterior($atribut);
         $data['status'] = $status;
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
 }

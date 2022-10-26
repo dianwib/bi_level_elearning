@@ -17,7 +17,7 @@ class Notif extends CI_Controller {
     
     public function index()
     {
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'notifikasi';
 
         //Outline Stay
@@ -216,7 +216,7 @@ class Notif extends CI_Controller {
             }
         }
 
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function read_notif($tipe, $id_tipe, $ntf_id) 

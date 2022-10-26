@@ -66,7 +66,7 @@ $data['dataasing'] = M_Course_Assignment::where('crs_id', $id)->get();
         $data['cek'] = M_At_risk::where("at_risk.crs_id","=",$id)->get();
 //        dd($data['cek']);
         //end at-risk
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     /* CRUD Course */
@@ -78,7 +78,7 @@ $data['dataasing'] = M_Course_Assignment::where('crs_id', $id)->get();
         $data['id'] = $id;
         $data['sidebar'] = 'layout/sidebar_instruktur';
         $data['content'] = "instruktur/add_lesson";
-        $this->load->view('layout/master',$data);
+        $this->load->view(MASTER_TEMPLATE,$data);
     }
 
     public function insert_lesson()
@@ -98,7 +98,7 @@ $data['dataasing'] = M_Course_Assignment::where('crs_id', $id)->get();
         // $data['id'] = $id;
         // $data['sidebar'] = 'layout/sidebar_instruktur';
         // $data['content'] = "instruktur/add_lesson";
-        // $this->load->view('layout/master', $data);
+        // $this->load->view(MASTER_TEMPLATE, $data);
 
         
         redirect('instruktur/lesson/'.$lesen['crs_id'],'refresh');
@@ -110,7 +110,7 @@ $data['dataasing'] = M_Course_Assignment::where('crs_id', $id)->get();
         $data['dataLesson'] = M_Course_Lesson::where('lsn_id',$id)->first();
         $data['sidebar'] = "layout/sidebar_instruktur";
         $data['content'] = "instruktur/edit_lesson";
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
 
     }
 

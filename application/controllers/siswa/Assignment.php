@@ -27,7 +27,7 @@ class Assignment extends CI_Controller {
     public function index($asg_id)
     {
 
-        $data['sidebar'] = 'layout/sidebar';
+        $data['sidebar'] = SIDEBAR_TEMPLATE;
         $data['content'] = 'siswa/assignment_detail';
         $data['assignment']=  M_Course_Assignment::leftJoin("course","course.crs_id","=","course_assignment.crs_id")
             ->where("asg_id","=", $asg_id)
@@ -83,7 +83,7 @@ class Assignment extends CI_Controller {
                     ->increment('ls_outline_stay', $lama_stay);
             }
         }
-        $this->load->view('layout/master', $data);
+        $this->load->view(MASTER_TEMPLATE, $data);
     }
 
     public function upload_assignment($asg_id)
